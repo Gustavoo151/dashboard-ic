@@ -4,6 +4,7 @@ from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 import pandas as pd
 import plotly.express as px
+from components import cidades
 
 from app import app
 
@@ -23,5 +24,4 @@ layout = dbc.Col([
             dbc.NavLink("Subgrupos", href="/subgrupos", active="exact"),
         ], vertical=True, pills=True, id='nav_buttons', style={'margin-botton': '50px'}),
         ], id='Sidebar-completa'),
-
 ])

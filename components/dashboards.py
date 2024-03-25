@@ -4,11 +4,12 @@ from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 import pandas as pd
 import plotly.graph_objects as go
-
+import assets
 from app import app
 
 # Leitura dos dados
 df = pd.read_csv('Data/base_com_dados_geral.csv')
+df_subgrupos = pd.read_csv('Data/subgrupos_geral.csv')
 
 # Definição do layout
 layout = dbc.Container([
@@ -22,22 +23,9 @@ layout = dbc.Container([
                 dbc.Button("Menor que 15", id="btn-menor-15", className="line-bottom"),
                 dbc.Button("Cidade com +10k", id="btn-cidade-10k", className="line-bottom"),
                 dbc.Button("BF", id="btn-bf", className="botoes-tela-principal-fim")
-            ]),
-        ])
-        # dbc.Col([
-        #     html.Div([
-        #         dbc.ButtonGroup([
-        #             dbc.Button("Geral", id="btn-geral", className="botoes-tela-principal-inicio line-bottom"),
-        #             dbc.Button("Rural", id="btn-rural", className="line-bottom"),
-        #             dbc.Button("Quilombola", id="btn-quilombola", className="line-bottom"),
-        #             dbc.Button("Analfabetas", id="btn-analfabetas", className="line-bottom"),
-        #             dbc.Button("Menor que 15", id="btn-menor-15", className="line-bottom"),
-        #             dbc.Button("Cidade com +10k", id="btn-cidade-10k", className="line-bottom"),
-        #             dbc.Button("BF", id="btn-bf", className="botoes-tela-principal-fim")
-        #         ]),
-        #     ]),
-        # ], width=6),
-    ], style={'margin-bottom': '10px'}, className='Botões '),
+            ],size="lg",),
+        ],
+        )], style={'margin-bottom': '10px'}, className='botoes'),
 
     dbc.Row([
         dbc.Col([
